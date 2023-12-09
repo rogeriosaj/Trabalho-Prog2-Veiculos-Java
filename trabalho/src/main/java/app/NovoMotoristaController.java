@@ -7,6 +7,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
 import model.User;
+import util.Dao;
 
 public class NovoMotoristaController {
     @FXML
@@ -24,8 +25,6 @@ public class NovoMotoristaController {
     @FXML
     private TextField campoSetor; 
     
-    
-    
     @FXML
     private void cadastrarMotorista(){
         User user = new User();
@@ -34,6 +33,8 @@ public class NovoMotoristaController {
         user.setDriverLicense(Long.valueOf(campoCnh.getText()));
         user.setCategory(campoCategoria.getText());
         user.setDepartment(campoSetor.getText());
+        Dao<User> dao = new Dao(User.class);
+        dao.inserir(user);
         limparCampos();
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.setContentText("user cadastrado");

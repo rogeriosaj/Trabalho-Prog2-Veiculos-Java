@@ -11,13 +11,36 @@ public class MenuController {
     private void cadastrarMotorista() throws IOException {
         App.setRoot("novoMotorista");
     }
+
+    @FXML
+    private void excluirMotorista() throws IOException{
+        App.setRoot("excluirMotorista");
+    }
     
     @FXML
     private void cadastrarVeiculo() throws IOException {
         App.setRoot("novoVeiculo");
     }
 
-    
+    @FXML
+    private void excluirVeiculo() throws IOException{
+        App.setRoot("excluirVeiculo");
+    }
+
+    @FXML
+    private void cadastrarOperador() throws IOException {
+        App.setRoot("novoOperador");
+    }
+
+    @FXML
+    private void retirarVeiculo() throws IOException {
+        App.setRoot("retiradaVeiculo");
+    }    
+
+    @FXML
+    private void devolverVeiculo() throws IOException {
+        App.setRoot("devolucaoVeiculo");
+    }
 
     @FXML
     private void sair(){
