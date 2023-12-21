@@ -1,3 +1,5 @@
 /.idea
 /.vscode
 /localhost.session.sql
+/.gitignore
+.fake
