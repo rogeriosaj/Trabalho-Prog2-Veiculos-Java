@@ -13,6 +13,11 @@ public class MenuController {
     }
 
     @FXML
+    private void editarMotorista() throws IOException {
+        App.setRoot("editarMotorista");
+    }
+    
+    @FXML
     private void listarMotoristas() throws IOException {
         App.setRoot("listarMotoristas");
     }
@@ -25,6 +30,11 @@ public class MenuController {
     @FXML
     private void cadastrarVeiculo() throws IOException {
         App.setRoot("novoVeiculo");
+    }
+
+    @FXML
+    private void editarVeiculo() throws IOException {
+        App.setRoot("editarVeiculo");
     }
 
     @FXML
@@ -45,6 +55,11 @@ public class MenuController {
     @FXML
     private void cadastrarOperadorLogin() throws IOException {
         App.setRoot("novoOperadorLogin");
+    }
+
+    @FXML
+    private void editarOperador() throws IOException {
+        App.setRoot("editarOperador");
     }
 
     @FXML

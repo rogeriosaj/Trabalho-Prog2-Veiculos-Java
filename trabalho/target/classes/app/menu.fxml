@@ -47,7 +47,7 @@
         <Menu mnemonicParsing="false" text="Operadores">
           <items>
             <MenuItem mnemonicParsing="false" onAction="#cadastrarOperador" text="Novo" />
-            <!--<MenuItem mnemonicParsing="false" onAction="#editarOperador" text="Editar" />-->
+            <MenuItem mnemonicParsing="false" onAction="#editarOperador" text="Editar" />
             <MenuItem mnemonicParsing="false" onAction="#excluirOperador" text="Excluir" />
             <MenuItem mnemonicParsing="false" onAction="#listarOperadores" text="Listar" />
           </items>
@@ -55,7 +55,7 @@
         <Menu mnemonicParsing="false" text="Motoristas">
           <items>
             <MenuItem mnemonicParsing="false" onAction="#cadastrarMotorista" text="Novo" />
-            <!--<MenuItem mnemonicParsing="false" onAction="#editarMotorista" text="Editar" />-->
+            <MenuItem mnemonicParsing="false" onAction="#editarMotorista" text="Editar" />
             <MenuItem mnemonicParsing="false" onAction="#excluirMotorista" text="Excluir" />
             <MenuItem mnemonicParsing="false" onAction="#listarMotoristas" text="Listar" />
           </items>
@@ -63,7 +63,7 @@
         <Menu mnemonicParsing="false" text="Veículos">
           <items>
             <MenuItem mnemonicParsing="false" onAction="#cadastrarVeiculo" text="Novo" />
-            <!--<MenuItem mnemonicParsing="false" onAction="#editarVeiculo" text="Editar" />-->
+            <MenuItem mnemonicParsing="false" onAction="#editarVeiculo" text="Editar" />
             <MenuItem mnemonicParsing="false" onAction="#excluirVeiculo" text="Excluir" />
             <MenuItem mnemonicParsing="false" onAction="#listarVeiculos" text="Listar" />
           </items>

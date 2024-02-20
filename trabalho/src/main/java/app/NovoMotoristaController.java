@@ -26,7 +26,7 @@ public class NovoMotoristaController {
     private TextField campoSetor; 
     
     @FXML
-    private void cadastrarMotorista(){
+    private void cadastrarMotorista()throws NumberFormatException{
         User user = new User();
         user.setName(campoNome.getText());
         user.setAddress(campoEndereco.getText());
