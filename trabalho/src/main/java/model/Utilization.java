@@ -3,6 +3,7 @@ package model;
 import java.util.Date;
 import java.io.Serializable;
 import java.util.Objects;
+import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -30,24 +31,32 @@ public class Utilization implements Register, Serializable, Persistivel {
     private User user;
     @Column
     @Temporal(TemporalType.DATE)
-    private Date firstDayOfUse;
+    private LocalDate firstDayOfUse;
     @Column
     @Temporal(TemporalType.DATE)
-    private Date lastDayOfUse;
+    private LocalDate lastDayOfUse;
 
-    public Utilization(Vehicle vehicle, User user, Date firstDayOfUse) {
+    public Utilization(Vehicle vehicle, User user, LocalDate firstDayOfUse, LocalDate lastDayOfUse) {
         this.vehicle = vehicle;
         this.user = user;
         this.firstDayOfUse = firstDayOfUse;
+        this.lastDayOfUse = lastDayOfUse;
+    }
+
+    public Utilization(){
+        this.vehicle = null;
+        this.user = null;
+        this.firstDayOfUse = null;
+        this.lastDayOfUse = null;
     }
 
     @Override
-    public void registerCheckOut(Date firstDayOfUse) {
+    public void registerCheckOut(LocalDate firstDayOfUse) {
         this.firstDayOfUse = firstDayOfUse;
     }
 
     @Override
-    public void registerCheckIn(Date lastDayOfUse) {
+    public void registerCheckIn(LocalDate lastDayOfUse) {
         this.lastDayOfUse = lastDayOfUse;
     }
 
@@ -55,16 +64,32 @@ public class Utilization implements Register, Serializable, Persistivel {
         return vehicle;
     }
 
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
+    }
+
     public User getUser() {
         return user;
     }
 
-    public Date getFirstDayOfUse() {
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public LocalDate getFirstDayOfUse() {
         return firstDayOfUse;
     }
 
-    public Date getLastDayOfUse() {
+    public void setFirstDayOfUse(LocalDate firstDayOfUse) {
+        this.firstDayOfUse = firstDayOfUse;
+    }
+
+    public LocalDate getLastDayOfUse() {
         return lastDayOfUse;
+    }
+
+    public void setLastDayOfUse(LocalDate lastDayOfUse) {
+        this.lastDayOfUse = lastDayOfUse;
     }
 
     public Integer getCodigo() {

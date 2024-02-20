@@ -124,6 +124,11 @@ public class Vehicle implements Serializable, Persistivel{
     }
 
     @Override
+    public String toString() {
+        return model;
+    }
+
+    @Override
     public int hashCode() {
         int hash = 7;
         hash = 41 * hash + Objects.hashCode(this.codigo);

@@ -5,7 +5,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
-import model.Operator;
 import model.Vehicle;
 import util.Dao;
 

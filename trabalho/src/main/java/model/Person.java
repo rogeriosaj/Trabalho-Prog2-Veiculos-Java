@@ -59,6 +59,11 @@ public class Person implements Persistivel, Serializable {
         return codigo;
     }
 
+    @Override
+    public String toString(){
+        return name;
+    }
+
     public void setCodigo(Integer codigo) {
         this.codigo = codigo;
     }

@@ -1,7 +1,7 @@
 module app {
     requires transitive javafx.graphics;
     requires transitive javafx.controls;
-    requires javafx.fxml;
+    requires transitive javafx.fxml;
     
     requires transitive java.persistence;
     requires org.hibernate.orm.core;

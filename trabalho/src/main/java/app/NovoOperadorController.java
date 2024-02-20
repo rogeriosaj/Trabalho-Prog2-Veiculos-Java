@@ -6,7 +6,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
 import model.Operator;
-import model.User;
 import util.Dao;
 
 public class NovoOperadorController {
@@ -27,8 +26,8 @@ public class NovoOperadorController {
         Operator operator = new Operator();
         operator.setName(campoNome.getText());
         operator.setAddress(campoEndereco.getText());
-        operator.setUsername(campoLogin.getText());
-        operator.setPassword(campoSenha.getText());
+        operator.setLogin(campoLogin.getText());
+        operator.setSenha(campoSenha.getText());
         Dao<Operator> dao = new Dao(Operator.class);
         dao.inserir(operator);
         limparCampos();

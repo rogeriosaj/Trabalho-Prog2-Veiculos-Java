@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.EditarOperadorController">
+    <children>
+        <MenuBar VBox.vgrow="NEVER">
+            <menus>
+                <Menu mnemonicParsing="false" text="Menu">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#voltarAoMenu" text="Menu" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+            <children>
+                <TextField fx:id="campoNome" layoutX="326.0" layoutY="139.0" promptText="Nome" />
+                <TextField fx:id="campoEndereco" layoutX="326.0" layoutY="180.0" promptText="Endereço" />
+                <TextField fx:id="campoLogin" layoutX="326.0" layoutY="225.0" promptText="Login" />
+                <TextField fx:id="campoSenha" layoutX="326.0" layoutY="265.0" promptText="Senha" />
+                <Button fx:id="botaoSalvar" layoutX="326.0" layoutY="316.0" mnemonicParsing="false" onAction="#salvarEdicao" text="Salvar" />
+                <Button fx:id="botaoCancelar" layoutX="413.0" layoutY="316.0" mnemonicParsing="false" onAction="#voltarAoMenu" text="Cancelar" />
+                <Label layoutX="243.0" layoutY="143.0" text="Novo Nome" />
+                <Label layoutX="238.0" layoutY="184.0" text="Novo Endereço" />
+                <Label layoutX="226.0" layoutY="229.0" text="Novo Login" />
+                <Label layoutX="235.0" layoutY="269.0" text="Nova Senha" />
+                <Text layoutX="329.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Editar Operador" wrappingWidth="141.580078125">
+                    <font>
+                        <Font size="22.0" />
+                    </font>
+                </Text>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>

@@ -1,54 +1,58 @@
 package model;
 
+import java.io.Serializable;
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import util.Persistivel;
+
 @Entity
 @Table(name = "operador")
 @DiscriminatorValue("operador")
 
-public class Operator extends Person{
+public class Operator extends Person implements Serializable, Persistivel{
     @Column(length = 15)
-    private String username;
+    private String login;
     @Column(length = 15)
-    private String password;
+    private String senha;
 
-    public Operator(String name, String address, String username, String password) {
+    public Operator(String name, String address, String login, String senha) {
         super(name, address);
-        this.username = username;
-        this.password = password;
+        this.login = login;
+        this.senha = senha;
     }
 
     public Operator(){
         super();
-        this.username = null;
-        this.password = null;
+        this.login = null;
+        this.senha = null;
     }
 
-    public String getUsername(){
-        return username;
+
+    public String getlogin(){
+        return login;
     }
 
-    public String getPassword(){
-        return password;
+    public String getsenha(){
+        return senha;
     }
 
-    public void setUsername(String username){
-        this.username = username;
+    public void setLogin(String login){
+        this.login = login;
     }
 
-    public void setPassword(String password){
-        this.password = password;
+    public void setSenha(String senha){
+        this.senha = senha;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 83 * hash + Objects.hashCode(this.username);
-        hash = 83 * hash + Objects.hashCode(this.password);
+        hash = 83 * hash + Objects.hashCode(this.login);
+        hash = 83 * hash + Objects.hashCode(this.senha);
         return hash;
     }
 
@@ -64,9 +68,9 @@ public class Operator extends Person{
             return false;
         }
         final Operator other = (Operator) obj;
-        if (!Objects.equals(this.username, other.password)) {
+        if (!Objects.equals(this.login, other.senha)) {
             return false;
         }
-        return Objects.equals(this.password, other.password);
+        return Objects.equals(this.senha, other.senha);
     }
 }

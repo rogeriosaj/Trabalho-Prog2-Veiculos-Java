@@ -3,7 +3,11 @@ package util;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
+
+import model.Vehicle;
 
 public class Dao<T extends Persistivel> {
 
@@ -63,4 +67,16 @@ public class Dao<T extends Persistivel> {
         manager.close();
         return lista;
     }
+
+    public List<String> listarModelosVeiculos() {
+        manager = JpaUtil.getEntityManager();
+        CriteriaBuilder builder = manager.getCriteriaBuilder();
+        CriteriaQuery<String> query = builder.createQuery(String.class);
+        Root<Vehicle> root = query.from(Vehicle.class);
+        query.select(root.get("model"));
+        List<String> modelos = manager.createQuery(query).getResultList();
+        manager.close();
+    return modelos;
+}
+
 }

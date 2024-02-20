@@ -14,7 +14,7 @@ import util.ExclusaoException;
 public class ExcluirVeiculoController {
 
     @FXML
-    private ComboBox<Vehicle> comboVehicles;
+    private ComboBox<Vehicle> comboVeiculos;
 
     private ObservableList<Vehicle> listaOb;
     private List<Vehicle> lista;
@@ -22,31 +22,32 @@ public class ExcluirVeiculoController {
 
     @FXML
     private void initialize() {
-        dao = new Dao(Vehicle.class);
+        dao = new Dao<>(Vehicle.class);
         lista = dao.listarTodos();
         listaOb = FXCollections.observableArrayList(lista);
-        comboVehicles.setItems(listaOb);
+        comboVeiculos.setItems(listaOb);
     }
 
     @FXML
     private void excluirVeiculo() {
-        Vehicle temp = comboVehicles.getSelectionModel().getSelectedItem();
-        try {
-            dao.excluir(temp);            
-        } catch (ExclusaoException e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText("Veículo não pode ser excluído");
-            alert.show();
-        }
-        // atualiza a lista 
+        Vehicle temp = comboVeiculos.getSelectionModel().getSelectedItem();
+        if (temp != null) {
+            try {
+                dao.excluir(temp);
+            } catch (ExclusaoException e) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText("Veiculo não pode ser excluído");
+                alert.show();
+            }
+        } 
+        // atualiza a lista
         lista = dao.listarTodos();
         listaOb = FXCollections.observableArrayList(lista);
-        comboVehicles.setItems(listaOb);
+        comboVeiculos.setItems(listaOb);
     }
 
     @FXML
     private void voltarAoMenu() throws IOException {
         App.setRoot("menu");
     }
-
 }

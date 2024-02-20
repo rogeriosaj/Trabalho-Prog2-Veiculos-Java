@@ -15,7 +15,7 @@ public class User extends Person{
     private Long driverLicense;
     @Column(length = 15)
     private String department;
-    @Column(length = 5)
+    @Column(length = 15)
     private String category;
 
     public User(String name, String address, Long driverLicense, String department, String category) {

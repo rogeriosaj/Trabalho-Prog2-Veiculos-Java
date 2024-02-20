@@ -37,7 +37,7 @@ public class NovoMotoristaController {
         dao.inserir(user);
         limparCampos();
         Alert alert = new Alert(AlertType.CONFIRMATION);
-        alert.setContentText("user cadastrado");
+        alert.setContentText("Motorista cadastrado");
         alert.show();
     }
     

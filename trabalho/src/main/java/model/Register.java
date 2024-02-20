@@ -1,9 +1,9 @@
 package model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public interface Register {
-    void registerCheckOut(Date checkOutDate);
-    void registerCheckIn(Date checkInDate);
+    void registerCheckOut(LocalDate checkOutDate);
+    void registerCheckIn(LocalDate checkInDate);
 }
 
