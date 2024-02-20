@@ -101,6 +101,11 @@ public class Utilization implements Register, Serializable, Persistivel {
     }
 
     @Override
+    public String toString() {
+        return vehicle.getModel() + " - " + user.getName();
+    }
+
+    @Override
     public int hashCode() {
         int hash = 7;
         hash = 53 * hash + Objects.hashCode(this.codigo);

@@ -2,7 +2,6 @@ package app;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.stage.Stage;
 import model.Utilization;
 import util.Dao;
 
@@ -54,7 +53,6 @@ public class DevolucaoVeiculoController {
 
         } catch (Exception e) {
             e.printStackTrace();
-            // Trate a exceção de acordo com a sua lógica de tratamento de erros
         }
     }
 

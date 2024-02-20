@@ -24,48 +24,53 @@ public class Vehicle implements Serializable, Persistivel{
     private String model;
     @Column(length = 20)
     private String plate;
+ 
     private boolean beingUsed;
     private String currentUser;
     private Date lastUsage;
+    
 
     public Vehicle(String brand, String model, String plate) {
         this.brand = brand;
         this.model = model;
-        this.plate = plate;
-        this.beingUsed = false;
-        this.currentUser = null;
-        this.lastUsage = null;
+        this.plate = plate; 
+         this.beingUsed = false;
+         this.currentUser = null;
+         this.lastUsage = null;
+         
     }
 
     public Vehicle(){
         this.brand = null;
         this.model = null;
-        this.plate = null;
-        this.beingUsed = false;
-        this.currentUser = null;
-        this.lastUsage = null;
+        this.plate = null; 
+         this.beingUsed = false;
+         this.currentUser = null;
+         this.lastUsage = null;
+         
     }
-
-    //Função para finalizar o uso de um veículo
-    public void checkIn(){
-        if (beingUsed == false) {
-            throw new RuntimeException("O veículo não está sendo usado.");
+    
+     //Função para finalizar o uso de um veículo
+     public void checkIn(){
+         if (beingUsed == false) {
+             throw new RuntimeException("O veículo não está sendo usado.");
+            }
+            beingUsed = false;
+            currentUser = null;
+            lastUsage = new Date();
         }
-        beingUsed = false;
-        currentUser = null;
-        lastUsage = new Date();
-    }
-
-    //Função para iniciar o uso de um veículo
-    public void checkOut(String user){
-        if (beingUsed == true) {
-            throw new RuntimeException("O veículo já está sendo usado.");
+        
+        //Função para iniciar o uso de um veículo
+        public void checkOut(String user){
+            if (beingUsed == true) {
+                throw new RuntimeException("O veículo já está sendo usado.");
+            }
+            beingUsed = true;
+            currentUser = user;
+            lastUsage = new Date();
         }
-        beingUsed = true;
-        currentUser = user;
-        lastUsage = new Date();
-    }
-
+        
+        
     @Override
     public Integer getCodigo() {
         return codigo;
@@ -86,46 +91,47 @@ public class Vehicle implements Serializable, Persistivel{
     public String getPlate() {
         return plate;
     }
-
-    public boolean isBeingUsed() {
-        return beingUsed;
-    }
-
-    public String getCurrentUser(){
-        return currentUser;
-    }
-
-    public Date getLastUsage(){
-        return lastUsage;
-    }
+    
+     public boolean isBeingUsed() {
+         return beingUsed;
+        }
+        
+        public String getCurrentUser(){
+            return currentUser;
+        }
+        
+        public Date getLastUsage(){
+            return lastUsage;
+        }
+        
 
     public void setBrand(String brand) {
         this.brand = brand;
     }
 
     public void setModel(String model) {
-        this.brand = model;
+        this.model = model;
     }
 
     public void setPlate(String plate) {
-        this.brand = plate;
+        this.plate = plate;
     }
-
+     
     public void setBeingUsed(boolean beingUsed) {
         this.beingUsed = beingUsed;
     }
-
+    
     public void setCurrentUser(String currentUser){
         this.currentUser = currentUser;
     }
-
+    
     public void setLastUsage(Date lastUsage){
         this.lastUsage = lastUsage;
     }
-
+    
     @Override
     public String toString() {
-        return model;
+        return this.model + "-" + this.plate;
     }
 
     @Override

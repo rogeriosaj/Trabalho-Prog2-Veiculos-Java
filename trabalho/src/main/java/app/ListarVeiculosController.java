@@ -1,30 +1,31 @@
 package app;
 
-import javafx.collections.FXCollections;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import java.util.List;
+
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import model.Vehicle;
 import util.Dao;
-import java.util.List;
 
-import java.io.IOException;
-
-public class ListarVeiculosController {
+public class ListarVeiculosController implements Initializable{
 
     @FXML
-    private ListView<String> listaVeiculos;
+    private ListView<Vehicle> listaVeiculos;
 
-    private Dao<Vehicle> VeiculoDao;
+    private Dao<Vehicle> veiculoDao = new Dao<>(Vehicle.class);
 
     @FXML
-    private void initialize() {
-        VeiculoDao = new Dao(Vehicle.class);
-        List<Vehicle> veiculos = VeiculoDao.listarTodos();
-        List<String> listaVeiculos = FXCollections.observableArrayList();
-        for (Vehicle veiculo : veiculos) {
-            listaVeiculos.add(veiculo.getBrand() + " -- " + veiculo.getModel() + " -- " + veiculo.getPlate());
-        }
-        this.listaVeiculos.getItems().addAll(listaVeiculos);
+    public void initialize(URL arg0, ResourceBundle arg1) {
+        carregarListaVeiculos();
+    }
+
+    private void carregarListaVeiculos() {
+        List<Vehicle> veiculos = veiculoDao.listarTodos();
+        listaVeiculos.getItems().addAll(veiculos);
     }
 
     @FXML

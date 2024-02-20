@@ -28,7 +28,7 @@ public class NovoVeiculoController {
         dao.inserir(vehicle);
         limparCampos();
         Alert alert = new Alert(AlertType.CONFIRMATION);
-        alert.setContentText("Veículo cadastrado");
+        alert.setContentText("Motorista cadastrado");
         alert.show();
     }
     
